@@ -70,6 +70,18 @@
         - { regex: 'nome_de_usuario_aqui', value: 'root' }
         - { regex: 'senha_aqui', value: 'root' }
 
+      - name: "Add tema no wp"
+        get_url:
+        url: "https://downloads.wordpress.org/theme/blocksy.1.8.6.2.zip"
+        dest: "/tmp/blocksy.1.8.6.2.zip"
+
+      - name: "unzip tema"
+        unarchive:
+          src: "/tmp/blocksy.1.8.6.2.zip"
+          dest: "/var/www/wordpress/wp-content/themes"
+          remote_src: yes
+
+
     - name: "Trocando pasta do render do apache para o wordpress"
       copy:
         src: "apache/000-default.conf"
