@@ -31,7 +31,7 @@
         dest: "/var/www/html"
         remote_src: yes
 
-    - name: "Trocando pasta do render do apache para o wordpress"
+    - name: "Trocando pasta do render do niginx"
       copy:
         src: "nginx/default"
         dest: "/etc/nginx/sites-available/default"
