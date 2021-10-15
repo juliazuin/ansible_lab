@@ -72,8 +72,8 @@
 
     - name: "Add tema no wp"
       get_url:
-      url: "https://downloads.wordpress.org/theme/blocksy.1.8.6.2.zip"
-      dest: "/tmp/blocksy.1.8.6.2.zip"
+        url: "https://downloads.wordpress.org/theme/blocksy.1.8.6.2.zip"
+        dest: "/tmp/blocksy.1.8.6.2.zip"
 
     - name: "unzip tema"
       unarchive:
