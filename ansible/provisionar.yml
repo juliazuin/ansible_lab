@@ -5,7 +5,21 @@
         name: apache2
         state: restarted
       become: yes
-  tasks:  
+  tasks:
+    #### com estado
+    # - name: "Criando um arquivo a toa no servidor"
+    #   copy: 
+    #     content: "teste danilo" 
+    #     dest: "/home/ubuntu/mais_um.txt"
+    #     backup: yes
+    #     owner: ubuntu
+    #     group: ubuntu
+    #     mode: 777
+
+    #### sem estado
+    # - name: "Criando um arquivo a toa no servidor"
+    #   shell: "echo 'escrevendo algo no servidor' >> teste.txt"
+  
     - name: "Roda: sudo apt update"
       become: yes
       apt:
