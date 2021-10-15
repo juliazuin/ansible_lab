@@ -1,5 +1,5 @@
 resource "aws_security_group" "allow_ssh_ansible_nginx" {
-  name        = "allow_ssh_ansible"
+  name        = "allow_ssh_ansible_nginx"
   description = "Allow SSH inbound traffic"
   vpc_id      = "vpc-063fc945cde94d3ab"
 
