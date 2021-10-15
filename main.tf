@@ -7,6 +7,7 @@ resource "aws_instance" "web" {
   key_name                = "chave_development_julia" # key chave publica cadastrada na AWS 
   subnet_id               =  "subnet-0734ecf92f4be11fa" # vincula a subnet direto e gera o IP automático
   private_ip              = "10.10.10.100"
+  associate_public_ip_address = true
   vpc_security_group_ids  = [
     "${aws_security_group.allow_ssh_ansible.id}",
   ]
@@ -19,4 +20,22 @@ resource "aws_instance" "web" {
   tags = {
     Name = "ec2_tf_Julia"
   }
+}
+
+resource "aws_eip" "example" {
+  vpc = true
+}
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.web.id
+  allocation_id = aws_eip.example.id
+}
+
+# terraform refresh para mostrar o ssh
+
+output "aws_instance_e_ssh" {
+  value = [
+    aws_instance.web.public_ip,
+    "ssh -i ~/.ssh/id_rsa ubuntu@${aws_instance.web.public_dns}"
+  ]
 }
