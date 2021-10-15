@@ -83,10 +83,10 @@
         msg: " '{{ ps.stdout_lines }}' "
 
     - name: "Lavanta serviço do mysql"
-        become: yes
-        service:
-          name: mysql
-          state: started
+      become: yes
+      service:
+        name: mysql
+        state: started
 
     - name: "Criando senha root mysql"
       become: yes
