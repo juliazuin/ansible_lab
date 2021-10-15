@@ -34,7 +34,7 @@
     - name: "Trocando pasta do render do niginx"
       become: yes
       copy:
-        src: "nginx/default"
+        src: "exercicio/nginx/default"
         dest: "/etc/nginx/sites-available/default"
       notify:
         - "restart Nginx"
