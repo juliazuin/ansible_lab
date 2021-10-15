@@ -33,7 +33,7 @@
 
     - name: "Trocando pasta do render do apache para o wordpress"
       copy:
-        src: "nginx/default"
+        src: "ansible_ex/nginx/default"
         dest: "/etc/nginx/sites-available/default"
       notify:
         - "restart Nginx"
