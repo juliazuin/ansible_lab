@@ -27,7 +27,7 @@
     
     - name: "Fazendo descompactação dos arquivos do bootstrap"
       unarchive:
-        src: "/tmp/startbootstrap-sb-admin-2-gh-pages.zip"
+        src: "/tmp/gh-pages.zip"
         dest: "/var/www/html"
         remote_src: yes
 
